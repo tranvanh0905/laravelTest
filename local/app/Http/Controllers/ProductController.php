@@ -5,7 +5,7 @@ use DB;
 use App\Products;
 use App\Categories;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Input;
 class ProductController extends Controller
 {
     /**
@@ -16,10 +16,8 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $data = DB::table('products')->get()->toArray();
-        echo '<pre>';
-        var_dump($data);die;
-        return view('Product',['data']->$data);
+        $data = DB::table('products')->get();
+        return view('Product', ['data'=>$data]);
     }
     public function AddPage()
     {
@@ -51,14 +49,22 @@ class ProductController extends Controller
         ]);
         $Product = new Products;
         $Product->name = $request->name;
-        $Product->image = $request->image;
         $Product->cate_id = $request->cate_id;
         $Product->price = $request->price;
         $Product->size = $request->size;
         $Product->color = $request->color;
         $Product->short_desc = $request->short_desc;
         $Product->detail = $request->detail;
+        if($request->hasFile('image')){
+            $file = Input::file('image');
+            $destination = 'uploads/';
+            $ext = $file->getClientOriginalExtension();
+            $mainFilename = str_random(6).date('h-i-s');
+            $file->move($destination, $mainFilename.".".$ext);
+        };
+        $Product->image = $mainFilename.'.'.$ext;
         $Product->save();
+        return view('Product');
     }
 
     /**

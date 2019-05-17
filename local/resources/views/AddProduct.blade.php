@@ -1,9 +1,18 @@
 @extends('layouts.master')
+<style>
+label{
+    font-size:16px!important;
+}
+input{
+    padding:0px!important;
+    margin:5px!important;
+}
+</style>
 @section('title','Sản phẩm')
 @section('content')
     <div class="main-content">
         <div class="section__content section__content--p30">
-            <form method="POST" action="saveProduct" ecntype="multipart/form-data">
+            <form method="POST" action="saveProduct" enctype="multipart/form-data">
                 <label>Tên danh mục:</label>
                 <br>
                 <input type="text" name="name">
@@ -27,7 +36,7 @@
                 <input type="text" name="size">
                 <br>
                 <label>Màu sắc:</label>
-                <input type="text" name="color">
+                <input type="color" name="color">
                 <br>
                 <label >Giới thiệu ngắn</label>
                 <textarea name="short_desc" cols="30" rows="10"></textarea>
