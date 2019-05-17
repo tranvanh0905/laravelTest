@@ -16,7 +16,9 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $data = DB::table('products')->get();
+        $data = DB::table('products')->get()->toArray();
+        echo '<pre>';
+        var_dump($data);die;
         return view('Product',['data']->$data);
     }
     public function AddPage()

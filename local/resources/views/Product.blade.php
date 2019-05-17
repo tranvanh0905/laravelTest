@@ -47,10 +47,11 @@
                                         </thead>
                                         <tbody>
                                         <form method="POST" action="#">
+                                            <?php var_dump($data);die; ?>
                                             @foreach ($data as $item)
                                             <tr class="tr-shadow">
                                                 <td class="desc">{{$item->name}}</td>
-                                                <td><img src="image/{{}}" alt=""></td>
+                                                <td><img src="image" alt=""></td>
                                                 <td></td>
                                                 <td>
                                                     <span class="status--process"></span>

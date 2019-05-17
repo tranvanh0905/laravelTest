@@ -23,6 +23,7 @@ Route::get('them-san-pham','ProductController@AddPage');
 Route::get('them-danh-muc','CategoryController@AddPage');
 Route::post('saveCategories','CategoryController@store');
 Route::post('saveProduct','ProductController@store');
+Route::get('tai-khoan','UserController@index');
 // Route::get('save','CategoryController@store');
 // Route::get('geta', function(){
 //     $danhmuc = App\Categories::all()->toArray();

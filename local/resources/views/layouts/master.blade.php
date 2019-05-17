@@ -19,6 +19,7 @@
     <link href="{{ asset('css/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
     <link href="{{ asset('css/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
     <link href="{{ asset('css/theme.css')}}" rel="stylesheet" media="all">
+    <link href="{{ asset('css/main.css')}}" rel="stylesheet" medial="all">
     <title>
         @section('title')
         @show
