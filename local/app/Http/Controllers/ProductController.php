@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Categories;
 use DB;
+use App\Products;
+use App\Categories;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +16,13 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $data = DB::table('Categories')->get();
-        return view('Category',['data'=>$data]);
+        $data = DB::table('products')->get();
+        return view('Product',['data']->$data);
     }
     public function AddPage()
     {
-        return view('AddCate');
+        $data = DB::table('Categories')->get();
+        return view('AddProduct',['data'=>$data]);
     }
     /**
      * Show the form for creating a new resource.
@@ -43,20 +45,27 @@ class CategoryController extends Controller
         //
         $requestValidate = $request->validate([
             'name' => 'required|max:64',
+            'image' => 'required'
         ]);
-        $Categories = new Categories;
-        $Categories->name = $request->name;
-        $Categories->save();
-        return redirect('danh-muc')->with('thongbao','Thêm thành công');
+        $Product = new Products;
+        $Product->name = $request->name;
+        $Product->image = $request->image;
+        $Product->cate_id = $request->cate_id;
+        $Product->price = $request->price;
+        $Product->size = $request->size;
+        $Product->color = $request->color;
+        $Product->short_desc = $request->short_desc;
+        $Product->detail = $request->detail;
+        $Product->save();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Products $products)
     {
         //
     }
@@ -64,10 +73,10 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Products $products)
     {
         //
     }
@@ -76,10 +85,10 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Products $products)
     {
         //
     }
@@ -87,10 +96,10 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Products $products)
     {
         //
     }

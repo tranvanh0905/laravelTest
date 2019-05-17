@@ -1,5 +1,5 @@
     @extends('layouts.master')
-    @section('title','Home')
+    @section('title','Bảng tin')
     @section('content')
-        @include('layouts.header')
+    
     @stop

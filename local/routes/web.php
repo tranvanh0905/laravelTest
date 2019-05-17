@@ -17,4 +17,14 @@ Route::get('/', function () {
 Route::get('admin', function () {
     return 'Đây là trang admin';
 });
-Route::get('home','CategoryController@index');
+Route::get('danh-muc','CategoryController@index');
+Route::get('san-pham','ProductController@index');
+Route::get('them-san-pham','ProductController@AddPage');
+Route::get('them-danh-muc','CategoryController@AddPage');
+Route::post('saveCategories','CategoryController@store');
+Route::post('saveProduct','ProductController@store');
+// Route::get('save','CategoryController@store');
+// Route::get('geta', function(){
+//     $danhmuc = App\Categories::all()->toArray();
+//     var_dump($danhmuc);
+// });

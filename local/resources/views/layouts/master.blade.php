@@ -18,13 +18,18 @@
     <link href="{{ asset('css/vendor/slick/slick.css')}}" rel="stylesheet" media="all">
     <link href="{{ asset('css/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
     <link href="{{ asset('css/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
+    <link href="{{ asset('css/theme.css')}}" rel="stylesheet" media="all">
     <title>
         @section('title')
         @show
     </title>
 </head>
-<body>
+<body class="animaition">
+    <div class="page-wrapper">
+    @include('layouts.header')
+    @include('layouts.nav')
     @yield('content')
+    </div>
 </body>
     <script src="{!! asset('js/vendor/jquery-3.2.1.min.js')!!}"></script>
     <!-- Bootstrap JS-->
