@@ -16,6 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         //
+        $serial = 0;
         $data = DB::table('products')->get();
         return view('Product', ['data'=>$data]);
     }
@@ -64,7 +65,7 @@ class ProductController extends Controller
         };
         $Product->image = $mainFilename.'.'.$ext;
         $Product->save();
-        return view('Product');
+        return redirect('san-pham');
     }
 
     /**

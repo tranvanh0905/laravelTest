@@ -36,7 +36,8 @@
                                     <table class="table table-data2">
                                         <thead>
                                             <tr>
-                                                <th>Tên danh mục</th>
+                                                <th>Số thứ tự</th>
+                                                <th>Tên sản phẩm</th>
                                                 <th>Ảnh</th>
                                                 <th>Giá</th>
                                                 <th>Ngày khởi tạo</th>
@@ -47,15 +48,15 @@
                                         </thead>
                                         <tbody>
                                         <form method="POST" action="#">
+                                           <?php var_dump($serial);die; ?>
                                             @foreach ($data as $item)
                                             <tr class="tr-shadow">
+                                                {{-- <td>{{$serial++}}</td> --}}
                                                 <td class="desc">{{$item->name}}</td>
-                                                <td><img src="" alt=""></td>
-                                                <td></td>
-                                                <td>
-                                                    <span class="status--process"></span>
-                                                </td>
-                                                
+                                                <td><img src="uploads/{{$item->image}}" style="width:50px;height:50px;" alt=""></td>
+                                                <td>{{$item->price}}</td>
+                                                <td>{{$item->created_at}}</td>
+                                                <td>{{$item->updated_at}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
                                                 
