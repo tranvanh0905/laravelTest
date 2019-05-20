@@ -48,10 +48,10 @@
                                         </thead>
                                         <tbody>
                                         <form method="POST" action="#">
-                                           <?php var_dump($serial);die; ?>
+                                            <?php $serial = 1; ?>
                                             @foreach ($data as $item)
                                             <tr class="tr-shadow">
-                                                {{-- <td>{{$serial++}}</td> --}}
+                                                <td>{{$serial++}}</td>
                                                 <td class="desc">{{$item->name}}</td>
                                                 <td><img src="uploads/{{$item->image}}" style="width:50px;height:50px;" alt=""></td>
                                                 <td>{{$item->price}}</td>

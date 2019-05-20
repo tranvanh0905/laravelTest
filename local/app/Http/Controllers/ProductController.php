@@ -16,9 +16,9 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $serial = 0;
+        $serial = 1;
         $data = DB::table('products')->get();
-        return view('Product', ['data'=>$data]);
+        return view('Product', ['data'=>$data], ['serial'=>$serial]);
     }
     public function AddPage()
     {
@@ -111,5 +111,7 @@ class ProductController extends Controller
     public function destroy(Products $products)
     {
         //
+        $products->delete();
+        return redirect()->route('san-pham')->with('success', 'Product deleted successfully');
     }
 }
