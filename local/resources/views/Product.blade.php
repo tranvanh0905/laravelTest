@@ -27,8 +27,8 @@
                                         </div>
                                     </div>
                                     <div class="table-data__tool-right">
-                                        <a href="#"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                            <i class="zmdi zmdi-plus"></i>Thêm người dùng</button>
+                                        <a href="them-san-pham"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                            <i class="zmdi zmdi-plus"></i>Thêm sản phẩm</button>
                                         </a>
                                     </div>
                                 </div>
@@ -47,8 +47,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <form method="POST" action="#">
-                                            <?php $serial = 1; ?>
                                             @foreach ($data as $item)
                                             <tr class="tr-shadow">
                                                 <td>{{$serial++}}</td>
@@ -64,7 +62,7 @@
                                                         <button class="item" title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button></a>
-                                                        <a href="#" ><button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                        <a href="deleteProduct" ><button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button></a>
                                                     

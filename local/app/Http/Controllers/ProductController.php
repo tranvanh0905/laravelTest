@@ -17,7 +17,9 @@ class ProductController extends Controller
     {
         //
         $serial = 1;
-        $data = DB::table('products')->get();
+        $data = DB::table('products')
+                ->orderBy('id', 'desc')
+                ->get();
         return view('Product', ['data'=>$data], ['serial'=>$serial]);
     }
     public function AddPage()
@@ -46,7 +48,12 @@ class ProductController extends Controller
         //
         $requestValidate = $request->validate([
             'name' => 'required|max:64',
-            'image' => 'required'
+            'image' => 'required',
+            'size' => 'required|max:6',
+            'color' => 'required',
+            'short_desc' => 'required',
+            'detail' => 'required',
+
         ]);
         $Product = new Products;
         $Product->name = $request->name;
@@ -111,7 +118,11 @@ class ProductController extends Controller
     public function destroy(Products $products)
     {
         //
-        $products->delete();
-        return redirect()->route('san-pham')->with('success', 'Product deleted successfully');
+        $productID = $products->get('id');
+        $getProductID = Products::find($productID);
+        echo '<pre>';
+        var_dump($getProductID);die;
+        DB::table('products')->delete();
+        return redirect('san-pham')->with('success', 'Product deleted successfully');
     }
 }

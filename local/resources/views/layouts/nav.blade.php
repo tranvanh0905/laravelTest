@@ -1,3 +1,4 @@
+
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
     </div>
@@ -10,14 +11,14 @@
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="danh-muc">
-                        <i class="fas fa-book"></i>Chuyên mục</a>
+                        <i class="fas fa-book"></i>Danh mục</a>
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="san-pham">
                         <i class="fas fa-box"></i>Sản phẩm</a>
                 </li>
                 <li class="has-sub">
-                    <a class="js-arrow" href="#">
+                    <a class="js-arrow" href="tai-khoan">
                         <i class="fas fa-user"></i>Tài khoản</a>
                 </li>
             </ul>
