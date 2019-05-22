@@ -6,6 +6,7 @@ use App\Products;
 use App\Categories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Database\Eloquent\Collection;
 class ProductController extends Controller
 {
     /**
@@ -120,9 +121,7 @@ class ProductController extends Controller
         //
         $productID = $products->get('id');
         $getProductID = Products::find($productID);
-        echo '<pre>';
-        var_dump($getProductID);die;
-        DB::table('products')->delete();
+        $getProductID->delete();
         return redirect('san-pham')->with('success', 'Product deleted successfully');
     }
 }

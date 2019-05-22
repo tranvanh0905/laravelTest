@@ -62,7 +62,7 @@
                                                         <button class="item" title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button></a>
-                                                        <a href="deleteProduct" ><button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                        <a href="deleteProduct?id={{$item->id}}" ><button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button></a>
                                                     
